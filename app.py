@@ -6,10 +6,13 @@ from PyQt5.QtCore import (QCoreApplication, QPropertyAnimation, QDate, QDateTime
 from PyQt5.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont, QFontDatabase, QIcon, QKeySequence, QLinearGradient, QPalette, QPainter, QPixmap, QRadialGradient)
 from PyQt5.QtWidgets import *
 
+from res.constants import *
+from res.database import Database
 
 class MainWindow(QMainWindow):
     def __init__(self):
         QMainWindow.__init__(self)
+        self.local_db = Database()
 
 
 if __name__ == "__main__":
