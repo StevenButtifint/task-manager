@@ -24,3 +24,7 @@ class Database:
         self.db_cursor.execute(f"SELECT * FROM {table_name} WHERE {field} = ?", (value,))
         return self.db_cursor.fetchall()
 
+    def update_weekday_task(self, title, change_field, value):
+        self.db_cursor.execute(f"UPDATE {WEEKDAY_TABLE_NAME} SET {change_field} = ? WHERE {WEEKDAY_TABLE_COLUMN_NAMES[0]} = ?", (value, title))
+        self.db_connection.commit()
+
