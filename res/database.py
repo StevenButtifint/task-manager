@@ -10,6 +10,11 @@ class Database:
     def get_weekday_tasks(self, day):
         return self.search_table(WEEKDAY_TABLE_NAME, day, 1)
 
+    def create_table(self, table_name, column_names, column_types):
+        column_argument = self._format_column_arguments(column_names, column_types)
+        self.db_cursor.execute(f'CREATE TABLE IF NOT EXISTS {table_name} ({column_argument})')
+        self.db_connection.commit()
+
     def search_table(self, table_name, field, value):
         self.db_cursor.execute(f"SELECT * FROM {table_name} WHERE {field} = ?", (value,))
         return self.db_cursor.fetchall()
