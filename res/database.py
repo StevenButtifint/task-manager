@@ -28,3 +28,6 @@ class Database:
         self.db_cursor.execute(f"UPDATE {WEEKDAY_TABLE_NAME} SET {change_field} = ? WHERE {WEEKDAY_TABLE_COLUMN_NAMES[0]} = ?", (value, title))
         self.db_connection.commit()
 
+    def add_weekday_task(self, title, description, do_mon, do_tue, do_wed, do_thu, do_fri, do_sat, do_sun):
+        self.create_record(WEEKDAY_TABLE_NAME, [title, description, DATE_BLANK, do_mon, do_tue, do_wed, do_thu, do_fri, do_sat, do_sun])
+
