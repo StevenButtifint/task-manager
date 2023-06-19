@@ -1,5 +1,6 @@
 import sqlite3
 from res.constants import *
+from res.operations import *
 
 
 class Database:
@@ -7,8 +8,11 @@ class Database:
         self.db_connection = sqlite3.connect(LOCAL_DB_DIR)
         self.db_cursor = self.db_connection.cursor()
 
-    def get_weekday_tasks(self, day):
-        return self.search_table(WEEKDAY_TABLE_NAME, day, 1)
+        self.create_table(WEEKDAY_TABLE_NAME, WEEKDAY_TABLE_COLUMN_NAMES, WEEKDAY_TABLE_COLUMN_TYPES)
+
+    def get_weekday_tasks(self, day_index):
+        return self.search_table(WEEKDAY_TABLE_NAME, day_index, 1)
+
 
     def create_table(self, table_name, column_names, column_types):
         column_argument = self._format_column_arguments(column_names, column_types)
