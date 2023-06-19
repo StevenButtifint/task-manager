@@ -1,8 +1,9 @@
 from datetime import datetime
+from res.constants import *
 
 
 def get_today_date():
-    return datetime.today().strftime('%Y-%m-%d')
+    return datetime.today().strftime('%Y/%m/%d')
 
 
 def get_weekday_index():
