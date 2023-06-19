@@ -30,4 +30,8 @@ class Database:
 
     def add_weekday_task(self, title, description, do_mon, do_tue, do_wed, do_thu, do_fri, do_sat, do_sun):
         self.create_record(WEEKDAY_TABLE_NAME, [title, description, DATE_BLANK, do_mon, do_tue, do_wed, do_thu, do_fri, do_sat, do_sun])
+    @staticmethod
+    def _format_column_arguments(names, types):
+        return ''.join([str(n) + " " + t + ", " for n, t in zip(names, types)])[:-2]
+
 
