@@ -15,6 +15,21 @@ class MainWindow(QMainWindow):
         self.local_db = Database()
 
 
+    def toggle_side_menu(self):
+        frame_left_menu = self.findChild(QFrame, 'frame_left_menu')
+        current_width = frame_left_menu.width()
+        end_value = SIDE_MENU_MAX
+
+        if current_width == end_value:
+            end_value = SIDE_MENU_MIN
+
+        self.animation = QPropertyAnimation(frame_left_menu, b"minimumWidth")
+        self.animation.setDuration(400)
+        self.animation.setStartValue(current_width)
+        self.animation.setEndValue(end_value)
+        self.animation.setEasingCurve(QtCore.QEasingCurve.InOutQuart)
+        self.animation.start()
+
     def add_weekday_task(self):
         task_title_qle = self.findChild(QLineEdit, 'led_weekday_title')
         task_description_pte = self.findChild(QPlainTextEdit, 'pte_weekday_desc')
