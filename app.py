@@ -15,6 +15,17 @@ class MainWindow(QMainWindow):
         self.local_db = Database()
 
 
+    def delete_layout(self, layout):
+        if layout is not None:
+            while layout.count():
+                item = layout.takeAt(0)
+                widget = item.widget()
+                if widget is not None:
+                    widget.deleteLater()
+                else:
+                    self.delete_layout(item.layout())
+            sip.delete(layout)
+
     def toggle_side_menu(self):
         frame_left_menu = self.findChild(QFrame, 'frame_left_menu')
         current_width = frame_left_menu.width()
