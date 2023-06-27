@@ -43,6 +43,15 @@ class MainWindow(QMainWindow):
         self.page_stack.setCurrentWidget(page)
         self.title.setText(title)
 
+    def setup_new_task_page(self):
+        for day_index in range(7):
+            day_checkbox = self.findChild(QCheckBox, WEEKDAY_NEW_TASK_CHECKBOXES[day_index])
+            day_tile = WEEKDAY_NEW_TASK_TILES[day_index]
+            day_checkbox.clicked.connect(lambda: self.update_new_weekday_checkbox_frame())
+        for checkbox in WEEKDAY_CHECKBOXES:
+            checkbox = self.findChild(QCheckBox, checkbox)
+            checkbox.setStyleSheet(WEEKDAY_CHECKBOX_STYLESHEET)
+
 
     def delete_layout(self, layout):
         if layout is not None:
