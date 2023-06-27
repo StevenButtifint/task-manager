@@ -52,6 +52,12 @@ class MainWindow(QMainWindow):
             checkbox = self.findChild(QCheckBox, checkbox)
             checkbox.setStyleSheet(WEEKDAY_CHECKBOX_STYLESHEET)
 
+    def change_rollover_lbl(self):
+        weekday_task_rollover = self.findChild(QLabel, 'lbl_rollover')
+        "Task Roll Over: 0 Day(s)"
+        value = self.slider_weekday_rollover.value()
+        weekday_task_rollover.setText(f'Task Roll Over: {value} Day(s)')
+
 
     def delete_layout(self, layout):
         if layout is not None:
