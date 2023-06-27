@@ -14,6 +14,11 @@ class MainWindow(QMainWindow):
         QMainWindow.__init__(self)
         self.local_db = Database()
 
+    def set_today_progress_bar(self, value):
+        today_tasks_bar = self.findChild(QProgressBar, 'bar_today_tasks')
+        today_tasks_bar.setValue(value)
+        return today_tasks_bar
+
 
     def delete_layout(self, layout):
         if layout is not None:
