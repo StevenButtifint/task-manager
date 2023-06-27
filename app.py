@@ -19,6 +19,26 @@ class MainWindow(QMainWindow):
         today_tasks_bar.setValue(value)
         return today_tasks_bar
 
+    def set_pages(self):
+        dashboard_page = self.findChild(QWidget, 'dashboard_page')
+        manage_task_page = self.findChild(QWidget, 'manage_task_page')
+        new_task_page = self.findChild(QWidget, 'new_task_page')
+        progress_page = self.findChild(QWidget, 'progress_page')
+        calendar_page = self.findChild(QWidget, 'calendar_page')
+        self.page_stack.setCurrentWidget(dashboard_page)
+
+        btn_dashboard_page = self.findChild(QPushButton, 'btn_dashboard_page')
+        btn_manage_task_page = self.findChild(QPushButton, 'btn_manage_task_page')
+        btn_new_task_page = self.findChild(QPushButton, 'btn_new_task_page')
+        btn_progress_page = self.findChild(QPushButton, 'btn_progress_page')
+        btn_calendar_page = self.findChild(QPushButton, 'btn_calendar_page')
+
+        btn_dashboard_page.clicked.connect(lambda: self.change_page(dashboard_page, "Dashboard"))
+        btn_manage_task_page.clicked.connect(lambda: self.change_page(manage_task_page, "Manage Tasks"))
+        btn_new_task_page.clicked.connect(lambda: self.change_page(new_task_page, "New Task"))
+        btn_progress_page.clicked.connect(lambda: self.change_page(progress_page, "My Progress"))
+        btn_calendar_page.clicked.connect(lambda: self.change_page(calendar_page, "Calendar Events"))
+
 
     def delete_layout(self, layout):
         if layout is not None:
