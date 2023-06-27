@@ -58,6 +58,15 @@ class MainWindow(QMainWindow):
         value = self.slider_weekday_rollover.value()
         weekday_task_rollover.setText(f'Task Roll Over: {value} Day(s)')
 
+    def update_new_weekday_checkbox_frame(self):
+        for checkbox_name in WEEKDAY_NEW_TASK_CHECKBOXES:
+            checkbox = self.findChild(QCheckBox, checkbox_name)
+            checkbox_frame = self.findChild(QFrame, WEEKDAY_NEW_TASK_TILES[WEEKDAY_NEW_TASK_CHECKBOXES.index(checkbox_name)])
+            if checkbox.isChecked():
+                checkbox_frame.setStyleSheet(NEW_WEEKDAY_TASK_TILE_CHECKED)
+            else:
+                checkbox_frame.setStyleSheet(NEW_WEEKDAY_TASK_TILE_UNCHECKED)
+
 
     def delete_layout(self, layout):
         if layout is not None:
