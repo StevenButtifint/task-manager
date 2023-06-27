@@ -39,6 +39,10 @@ class MainWindow(QMainWindow):
         btn_progress_page.clicked.connect(lambda: self.change_page(progress_page, "My Progress"))
         btn_calendar_page.clicked.connect(lambda: self.change_page(calendar_page, "Calendar Events"))
 
+    def change_page(self, page, title):
+        self.page_stack.setCurrentWidget(page)
+        self.title.setText(title)
+
 
     def delete_layout(self, layout):
         if layout is not None:
