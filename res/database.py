@@ -14,6 +14,11 @@ class Database:
         return self.search_table(WEEKDAY_TABLE_NAME, day_index, 1)
 
 
+    def get_today_tasks(self, day_index):
+        today_tasks = self.get_weekday_tasks(day_index)
+        overdue_weekday_tasks = self.get_overdue_weekday_tasks(day_index)
+        return today_tasks
+
     def create_table(self, table_name, column_names, column_types):
         column_argument = self._format_column_arguments(column_names, column_types)
         self.db_cursor.execute(f'CREATE TABLE IF NOT EXISTS {table_name} ({column_argument})')
