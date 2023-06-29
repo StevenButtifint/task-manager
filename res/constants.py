@@ -9,6 +9,11 @@ DAY_BAR_INACTIVE = '#353535'
 TASK_TEXT_COMPLETED = '#365a08'
 TASK_TEXT_INCOMPLETE = 'white'
 
+
+# sizes
+SIDE_MENU_MIN = 50
+SIDE_MENU_MAX = 200
+
 # database tables
 WEEKDAY_TABLE_NAME = "weekday_tasks"
 DATES_TABLE_NAME = "dates_tasks"
