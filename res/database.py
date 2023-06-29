@@ -32,8 +32,13 @@ class Database:
         self.db_cursor.execute(f"UPDATE {WEEKDAY_TABLE_NAME} SET {change_field} = ? WHERE {WEEKDAY_TABLE_COLUMN_NAMES[0]} = ?", (value, title))
         self.db_connection.commit()
 
-    def add_weekday_task(self, title, description, do_mon, do_tue, do_wed, do_thu, do_fri, do_sat, do_sun):
-        self.create_record(WEEKDAY_TABLE_NAME, [title, description, DATE_BLANK, do_mon, do_tue, do_wed, do_thu, do_fri, do_sat, do_sun])
+    def add_weekday_task(self, title, description, do_mon, do_tue, do_wed, do_thu, do_fri, do_sat, do_sun, rollover):
+        self.create_record(WEEKDAY_TABLE_NAME, [title, description, DATE_BLANK, do_mon, do_tue, do_wed, do_thu, do_fri, do_sat, do_sun, rollover])
+
+    def delete_task(self, title, table_name):
+        self.db_cursor.execute(f"DELETE FROM {table_name} WHERE title = ?", (title,))
+        self.db_connection.commit()
+
     @staticmethod
     def _format_column_arguments(names, types):
         return ''.join([str(n) + " " + t + ", " for n, t in zip(names, types)])[:-2]
