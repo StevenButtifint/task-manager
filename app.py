@@ -67,6 +67,20 @@ class MainWindow(QMainWindow):
             else:
                 checkbox_frame.setStyleSheet(NEW_WEEKDAY_TASK_TILE_UNCHECKED)
 
+    def set_weekday_icon(self):
+        day_index = get_weekday_index()
+        for weekday_index in range(7):
+            if weekday_index == day_index:
+                self.findChild(QLabel, WEEKDAY_TITLE_LABELS[weekday_index]).setStyleSheet(
+                    f'color: {DAY_BAR_ACTIVE};')
+                self.findChild(QFrame, WEEKDAY_UNDER_FRAMES[weekday_index]).setStyleSheet(
+                    f'background-color: {DAY_BAR_ACTIVE};')
+            else:
+                self.findChild(QLabel, WEEKDAY_TITLE_LABELS[weekday_index]).setStyleSheet(
+                    f'color: {TASK_TEXT_COMPLETED};')
+                self.findChild(QFrame, WEEKDAY_UNDER_FRAMES[weekday_index]).setStyleSheet(
+                    f'background-color: {DAY_BAR_INACTIVE};')
+
 
     def delete_layout(self, layout):
         if layout is not None:
