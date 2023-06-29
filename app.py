@@ -81,6 +81,16 @@ class MainWindow(QMainWindow):
                 self.findChild(QFrame, WEEKDAY_UNDER_FRAMES[weekday_index]).setStyleSheet(
                     f'background-color: {DAY_BAR_INACTIVE};')
 
+    def setup_today_tasks(self):
+        today_tasks_frame = self.findChild(QFrame, 'todayTasksFrame')
+        frame_layout = QVBoxLayout(today_tasks_frame)
+        frame_layout.setContentsMargins(0, 0, 0, 0)
+        self.today_tasks_container = QWidget(today_tasks_frame)
+        scroll_area = QScrollArea(today_tasks_frame)
+        scroll_area.setWidgetResizable(True)
+        scroll_area.setWidget(self.today_tasks_container)
+        frame_layout.addWidget(scroll_area)
+
 
     def delete_layout(self, layout):
         if layout is not None:
