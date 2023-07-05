@@ -1,9 +1,6 @@
-
 import sys
-import platform
-from PyQt5 import QtCore, QtGui, QtWidgets, uic
+from PyQt5 import QtCore, QtGui, QtWidgets, uic, sip
 from PyQt5.QtCore import (QCoreApplication, QPropertyAnimation, QDate, QDateTime, QMetaObject, QObject, QPoint, QRect, QSize, QTime, QUrl, Qt, QEvent)
-from PyQt5.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont, QFontDatabase, QIcon, QKeySequence, QLinearGradient, QPalette, QPainter, QPixmap, QRadialGradient)
 from PyQt5.QtWidgets import *
 
 from res.constants import *
@@ -12,6 +9,7 @@ from res.database import Database
 class MainWindow(QMainWindow):
     def __init__(self):
         QMainWindow.__init__(self)
+        uic.loadUi(UI_FILE_DIR, self)
         self.local_db = Database()
 
     def set_today_progress_bar(self, value):
