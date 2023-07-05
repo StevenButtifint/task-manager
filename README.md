@@ -2,7 +2,7 @@
 # Task Manager
  
 ### Demo Video
-![](https://github.com/stevenbuttifint/task-manager/blob/main/res/demo_images/demo_one.gif?raw=true)
+![](https://github.com/stevenbuttifint/task-manager/blob/main/demo_images/demo_one.gif?raw=true)
 
 ---
 
