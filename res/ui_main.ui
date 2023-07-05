@@ -615,7 +615,7 @@ QPushButton:hover {
              <string notr="true"/>
             </property>
             <property name="currentIndex">
-             <number>3</number>
+             <number>4</number>
             </property>
             <widget class="QWidget" name="dashboard_page">
              <property name="styleSheet">
@@ -1387,7 +1387,7 @@ QPushButton:hover {
                   <number>0</number>
                  </property>
                  <item>
-                  <widget class="QProgressBar" name="progressBar_7">
+                  <widget class="QProgressBar" name="bar_last_mon">
                    <property name="sizePolicy">
                     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                      <horstretch>0</horstretch>
@@ -1418,7 +1418,7 @@ QPushButton:hover {
                   </widget>
                  </item>
                  <item>
-                  <widget class="QProgressBar" name="progressBar_6">
+                  <widget class="QProgressBar" name="bar_last_tue">
                    <property name="sizePolicy">
                     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                      <horstretch>0</horstretch>
@@ -1449,7 +1449,7 @@ QPushButton:hover {
                   </widget>
                  </item>
                  <item>
-                  <widget class="QProgressBar" name="progressBar_5">
+                  <widget class="QProgressBar" name="bar_last_wed">
                    <property name="sizePolicy">
                     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                      <horstretch>0</horstretch>
@@ -1480,7 +1480,7 @@ QPushButton:hover {
                   </widget>
                  </item>
                  <item>
-                  <widget class="QProgressBar" name="progressBar_4">
+                  <widget class="QProgressBar" name="bar_last_thu">
                    <property name="sizePolicy">
                     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                      <horstretch>0</horstretch>
@@ -1511,7 +1511,7 @@ QPushButton:hover {
                   </widget>
                  </item>
                  <item>
-                  <widget class="QProgressBar" name="progressBar_3">
+                  <widget class="QProgressBar" name="bar_last_fri">
                    <property name="sizePolicy">
                     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                      <horstretch>0</horstretch>
@@ -1542,7 +1542,7 @@ QPushButton:hover {
                   </widget>
                  </item>
                  <item>
-                  <widget class="QProgressBar" name="progressBar_2">
+                  <widget class="QProgressBar" name="bar_last_sat">
                    <property name="sizePolicy">
                     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                      <horstretch>0</horstretch>
@@ -1573,7 +1573,7 @@ QPushButton:hover {
                   </widget>
                  </item>
                  <item>
-                  <widget class="QProgressBar" name="progressBar">
+                  <widget class="QProgressBar" name="bar_last_sun">
                    <property name="sizePolicy">
                     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                      <horstretch>0</horstretch>
