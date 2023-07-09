@@ -1,0 +1,11 @@
+check	https://www.flaticon.com/free-icon/check_10522167
+add	https://www.flaticon.com/free-icon/tab_7420898
+edit	https://www.flaticon.com/free-icon/edit_95637
+unselected	https://www.flaticon.com/free-icon/blank_565663
+selected	https://www.flaticon.com/free-icon/checked_565662
+calendar	https://www.flaticon.com/free-icon/calendar_55281
+week		https://www.flaticon.com/free-icon/week_4623700
+close		https://www.flaticon.com/free-icon/close_2732657
+logout		https://www.flaticon.com/free-icon/logout_992680
+pencil		https://www.flaticon.com/free-icon/pencil_650143
+plus		https://www.flaticon.com/free-icon/plus_1828579

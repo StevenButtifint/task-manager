@@ -21,12 +21,15 @@ Your can easily track your progress and manage tasks for today. It was developed
 
 ### What I Learned
 - How to use the PyQt library with the Qt framework to build a feature-rich GUI.
+- How to use Qt Designer to create and edit a GUI made of Qt Widgets.
+- How to create GUI animations using QPropertyAnimation to change Qt property value changes.
+- How to manage Qt widgets in an object-oriented programming style.
 - Refreshed my experience with the SQLite library for database management.
 
 ---
 
 ### References
-- TODO
+- The links to the icons used can be found [here](https://github.com/StevenButtifint/task-manager/blob/main/references.txt).
 
 
 
