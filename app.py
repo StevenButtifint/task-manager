@@ -34,12 +34,16 @@ class MainWindow(QMainWindow):
         btn_dashboard_page.clicked.connect(lambda: self.change_page(dashboard_page, "Dashboard"))
         btn_manage_task_page.clicked.connect(lambda: self.change_page(manage_task_page, "Manage Tasks"))
         btn_new_task_page.clicked.connect(lambda: self.change_page(new_task_page, "New Task"))
-        btn_progress_page.clicked.connect(lambda: self.change_page(progress_page, "My Progress"))
+        btn_progress_page.clicked.connect(lambda: self.show_week_progress(progress_page))
         btn_calendar_page.clicked.connect(lambda: self.change_page(calendar_page, "Calendar Events"))
 
     def change_page(self, page, title):
         self.page_stack.setCurrentWidget(page)
         self.title.setText(title)
+
+    def show_week_progress(self, progress_page):
+        self.change_page(progress_page, "My Progress")
+        self.refresh_week_progress_bars()
 
     def setup_new_task_page(self):
         for day_index in range(7):
