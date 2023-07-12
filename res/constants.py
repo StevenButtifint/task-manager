@@ -23,3 +23,8 @@ CYCLE_TABLE_NAME = "cycle_tasks"
 WEEKDAYS = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"]
 WEEKDAY_TABLE_COLUMN_NAMES = ["title", "description", "date_last_done", "mon", "tue", "wed", "thu", "fri", "sat", "sun", "days_rollover"]
 WEEKDAY_TABLE_COLUMN_TYPES = ["text", "text", "text", "integer", "integer", "integer", "integer", "integer", "integer", "integer", "integer"]
+
+# notice messages
+NOTICE_NONE = ""
+NOTICE_WELCOME = "Welcome Back!"
+
