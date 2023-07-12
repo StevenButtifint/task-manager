@@ -45,6 +45,13 @@ class MainWindow(QMainWindow):
         self.change_page(progress_page, "My Progress")
         self.refresh_week_progress_bars()
 
+    def refresh_week_progress_bars(self):
+        last_week_dates = get_last_week_dates()
+        for index, day_date in enumerate(last_week_dates):
+            percentage = self.local_db.get_weekday_tasks_completion_percentage(day_date, index)
+            bar_last_day = self.findChild(QProgressBar, 'bar_last_'+WEEKDAYS[index])
+            bar_last_day.setValue(int(percentage))
+
     def setup_new_task_page(self):
         for day_index in range(7):
             day_checkbox = self.findChild(QCheckBox, WEEKDAY_NEW_TASK_CHECKBOXES[day_index])
