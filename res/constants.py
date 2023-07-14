@@ -28,3 +28,11 @@ WEEKDAY_TABLE_COLUMN_TYPES = ["text", "text", "text", "integer", "integer", "int
 NOTICE_NONE = ""
 NOTICE_WELCOME = "Welcome Back!"
 
+# widget names
+WEEKDAY_TITLE_LABELS = ['lbl_monday', 'lbl_tuesday', 'lbl_wednesday', 'lbl_thursday', 'lbl_friday', 'lbl_saturday', 'lbl_sunday']
+WEEKDAY_UNDER_FRAMES = ['frm_monday_under', 'frm_tuesday_under', 'frm_wednesday_under', 'frm_thursday_under', 'frm_friday_under', 'frm_saturday_under', 'frm_sunday_under']
+WEEKDAY_CHECKBOXES = ['chk_monday_new', 'chk_tuesday_new', 'chk_wednesday_new', 'chk_thursday_new', 'chk_friday_new', 'chk_saturday_new', 'chk_sunday_new']
+
+WEEKDAY_NEW_TASK_TILES = ['frm_monday_new_tile', 'frm_tuesday_new_tile', 'frm_wednesday_new_tile', 'frm_thursday_new_tile', 'frm_friday_new_tile', 'frm_saturday_new_tile', 'frm_sunday_new_tile']
+WEEKDAY_NEW_TASK_CHECKBOXES = ['chk_monday_new', 'chk_tuesday_new', 'chk_wednesday_new', 'chk_thursday_new', 'chk_friday_new', 'chk_saturday_new', 'chk_sunday_new']
+
