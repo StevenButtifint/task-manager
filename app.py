@@ -12,6 +12,13 @@ class MainWindow(QMainWindow):
         uic.loadUi(UI_FILE_DIR, self)
         self.local_db = Database()
 
+        self.lbl_notice = self.findChild(QLabel, 'lbl_notice')
+        self.title = self.findChild(QLabel, 'lbl_title')
+        self.page_stack = self.findChild(QStackedWidget, 'stackedWidget')
+        self.today_tasks_bar = self.set_today_progress_bar(0)
+        self.slider_weekday_rollover = self.findChild(QSlider, 'sld_weekday_rollover')
+        self.slider_weekday_rollover.valueChanged.connect(self.change_rollover_lbl)
+
     def set_today_progress_bar(self, value):
         today_tasks_bar = self.findChild(QProgressBar, 'bar_today_tasks')
         today_tasks_bar.setValue(value)
