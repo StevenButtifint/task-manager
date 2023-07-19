@@ -19,6 +19,17 @@ class MainWindow(QMainWindow):
         self.slider_weekday_rollover = self.findChild(QSlider, 'sld_weekday_rollover')
         self.slider_weekday_rollover.valueChanged.connect(self.change_rollover_lbl)
 
+        self.setup()
+        self.show()
+
+    def setup(self):
+        self.set_weekday_icon()
+        self.setup_today_tasks()
+        self.refresh_today_tasks()
+        self.set_pages()
+        self.setup_new_task_page()
+        self.lbl_notice.setText(NOTICE_WELCOME)
+
     def set_today_progress_bar(self, value):
         today_tasks_bar = self.findChild(QProgressBar, 'bar_today_tasks')
         today_tasks_bar.setValue(value)
