@@ -30,6 +30,13 @@ class MainWindow(QMainWindow):
         new_task_page = self.findChild(QWidget, 'new_task_page')
         progress_page = self.findChild(QWidget, 'progress_page')
         calendar_page = self.findChild(QWidget, 'calendar_page')
+
+        btn_add_weekday = self.findChild(QPushButton, 'btn_add_weekday')
+        btn_add_weekday.clicked.connect(lambda: self.add_weekday_task())
+        btn_toggle = self.findChild(QPushButton, 'Btn_Toggle')
+        btn_toggle.clicked.connect(lambda: self.toggle_side_menu())
+        btn_exit = self.findChild(QPushButton, 'btn_exit')
+        btn_exit.clicked.connect(lambda: self.close())
         self.page_stack.setCurrentWidget(dashboard_page)
 
         btn_dashboard_page = self.findChild(QPushButton, 'btn_dashboard_page')
