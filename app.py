@@ -125,6 +125,25 @@ class MainWindow(QMainWindow):
         scroll_area.setWidget(self.today_tasks_container)
         frame_layout.addWidget(scroll_area)
 
+    def refresh_today_tasks(self):
+        try:
+            self.delete_layout(self.today_tasks_layout)
+            self.today_tasks_layout = QVBoxLayout(self.today_tasks_container)
+
+        except AttributeError:
+            self.today_tasks_layout = QVBoxLayout(self.today_tasks_container)
+
+        self.today_tasks_container.setLayout(self.today_tasks_layout)
+
+        today_tasks = self.local_db.get_today_tasks(WEEKDAYS[get_weekday_index()])
+
+        for task in today_tasks:
+            TaskItem(task[0], task[1], task[2], self.today_tasks_layout, self.today_tasks_bar, (100 / len(today_tasks)), self.local_db, self.refresh_today_tasks)
+            line = QFrame()
+            line.setStyleSheet("background-color: #141617;")
+            line.setFrameShape(QFrame.HLine)
+            line.setFrameShadow(QFrame.Raised)
+            self.today_tasks_layout.addWidget(line)
 
     def delete_layout(self, layout):
         if layout is not None:
